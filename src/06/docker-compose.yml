@@ -1,0 +1,12 @@
+version: "3"
+services:
+  backend:
+    build: cont_backend/
+    expose: 
+      - 81
+  nginx:
+    build: cont_nginx/
+    ports:
+      - 80:8080
+    depends_on: 
+      - backend                
